@@ -1,6 +1,7 @@
 package com.srivath.notification.models;
 
 public class EmailRequest {
+    private String from;
     private String to;
     private String subject;
     private String body;
@@ -36,5 +37,13 @@ public class EmailRequest {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
     }
 }

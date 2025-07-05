@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h2>Payment Receipt</h2>
+<p>Dear <span th:text="${userName}">Customer</span>,</p>
+<p>Thank you for your payment! Here is your receipt:</p>
+
+<p>Payment ID: <span th:text="${paymentId}">12345</span></p>
+<p>Order ID: <span th:text="${orderId}">67890</span></p>
+<p>Amount To be Paid: <span th:text="${amount}">250.50</span></p>
+<p>Amount Paid: <span th:text="${amountPaid}">250.50</span></p>
+<p>Status: <span th:text="${status}">Successful</span></p>
+
+<h3>Payment Details:</h3>
+
+<table>
+    <tr>
+        <th>Payment Method</th>
+        <th>Additional Info</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Date</th>
+    </tr>
+    <tr th:each="paymentInstance : ${paymentInstances}">
+        <td th:text="${paymentInstance.paymentMethod}"></td>
+        <td th:text="${paymentInstance.additionalInfo}"></td>
+        <td style="text-align: right" th:text="${paymentInstance.amount}"></td>
+        <td th:text="${paymentInstance.paymentStatus}"></td>
+        <td th:text="${paymentInstance.paymentDate}"></td>
+
+    </tr>
+</table>
+
+<p>If you have any questions, please contact us at sri123.ecom@gmail.com</p>
+<p>Thank you for choosing us!</p>
+</body>
+</html>
